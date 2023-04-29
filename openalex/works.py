@@ -2,7 +2,6 @@
 Module for working with scholarly works from the OpenAlex API.
 """
 
-import base64
 import requests
 
 
@@ -102,9 +101,5 @@ class Works:
         fields += [f'DO  - {self.data["doi"]}']
 
         ris = "\n".join(fields)
-        ris64 = base64.b64encode(ris.encode("utf-8")).decode("utf8")
-        uri = (
-            f"<pre>{ris}<pre><br>"
-            f'<a href="data:text/plain;base64,{ris64}" download="ris">Download RIS</a>'
-        )
+        
         return ris
