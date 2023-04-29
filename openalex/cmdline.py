@@ -18,8 +18,7 @@ from .works import Works
 )
 def cite(doi, citeformat):
     """
-    Outputs RIS or BibTeX for a given DOI. ChatGPT 4 assisted
-    me in writing this function.
+    
     """
     kat_0 = Works(doi)
     if citeformat == "bibtex":
